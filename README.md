@@ -4,11 +4,6 @@
 
 <p align="center"><img width=200 src="https://github.com/softeerbootcamp-2nd/H3-UmochaRacer/assets/97653343/018081b6-63e5-433f-afaf-95fc6e822818"></p>
 
-<p align="center">🚘
-<a href="http://umocha-racer.team/"> umocha-racer.team </a>
-🚘</p>
-
-
 > 현대자동차 소프티어 부트캠프 2기<br>
 > 프로젝트 기간 2023.07.31~2023.08.30
 
