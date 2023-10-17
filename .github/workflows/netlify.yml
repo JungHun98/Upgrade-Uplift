@@ -2,7 +2,8 @@ name: Build and Deploy to Netlify
 
 on:
   push:
-    branches: ['develop']
+    branches:
+      - develop
 
 jobs:
   build:
@@ -12,25 +13,18 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Set up Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 16
 
-      - name: Install
-        run: rm -f package-lock.json && npm install
+      - name: Install dependencies
+        run: npm ci
 
       - name: Build
         run: npm run build
 
       - name: Deploy to Netlify
-        uses: nwtgck/actions-netlify@v2.0
-
-        with:
-          publish-dir: './dist'
-          production-branch: develop
-          github-token: ${{ secrets.SECRET_TOKEN }}
-
+        run: npx netlify-cli deploy --prod
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
