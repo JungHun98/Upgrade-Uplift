@@ -8,8 +8,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      working-directory: /
     
     steps:
       - uses: actions/checkout@v2
@@ -19,7 +17,7 @@ jobs:
       - name: Deploy to Netlify
         uses: nwtgck/actions-netlify@v2.1.0
         with:
-          publish-dir: './dist'
+          publish-dir: '../dist'
           production-branch: develop
           github-token: ${{ secrets.GITHUB_TOKEN }}
           deploy-message: "Deploy from GitHub Actions"
