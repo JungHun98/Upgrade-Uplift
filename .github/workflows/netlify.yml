@@ -2,7 +2,7 @@ name: Build and Deploy to Netlify
 
 on:
   push:
-    branches: ['deploy']
+    branches: ['develop']
   
 jobs:
   build:
@@ -22,7 +22,7 @@ jobs:
 
         with:
           publish-dir: './dist'     
-          production-branch: deploy
+          production-branch: develop
           github-token: ${{ secrets.GITHUB_TOKEN }}
           
         env:
