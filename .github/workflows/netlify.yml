@@ -3,20 +3,20 @@ name: Build and Deploy to Netlify
 on:
   push:
     branches: ['develop']
-  
+
 jobs:
   build:
     runs-on: ubuntu-latest
-  
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
       - name: Set up Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v2  # 버전을 v2로 업데이트하고
         with:
           node-version: 16
-          
+
       - name: Install
         run: rm -f package-lock.json && npm install
 
@@ -27,10 +27,10 @@ jobs:
         uses: nwtgck/actions-netlify@v2.0
 
         with:
-          publish-dir: './dist'     
+          publish-dir: './dist'
           production-branch: develop
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          
+
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
