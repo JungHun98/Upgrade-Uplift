@@ -1,0 +1,30 @@
+name: Build and Deploy to Netlify
+
+on:
+  push:
+    branches: ['deploy']
+  
+jobs:
+  build:
+    runs-on: ubuntu-latest
+  
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install
+        run: rm -f package-lock.json && npm install
+
+      - name: Build
+        run: npm run build
+
+      - name: Deploy to Netlify
+        uses: nwtgck/actions-netlify@v1.2
+
+        with:
+          publish-dir: './dist'     
+          production-branch: deploy
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
