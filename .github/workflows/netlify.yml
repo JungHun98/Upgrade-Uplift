@@ -29,7 +29,7 @@ jobs:
         with:
           publish-dir: './dist'
           production-branch: develop
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.SECRET_TOKEN }}
 
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
