@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import main from '/image/main.png';
 import {flexBetween, flexCenter} from '@/style/common';
 import TrimCardList from './intro/trimCard/TrimCard';
-
 import IntroTitle from './intro/IntroTitle';
 import IntroShowMore from './intro/IntroShowMore';
 import ModelTitleList from './modelTitle/ModelTitle';
@@ -15,6 +14,7 @@ import {Body1_Medium, Title5_Regular} from '@/style/fonts';
 import Icon from '../common/icons';
 import {useScroll} from '../hooks/useScroll';
 import {useNavigate} from 'react-router-dom';
+
 function MainContainer() {
   const scrollPosition = useScroll();
   const navigate = useNavigate();
