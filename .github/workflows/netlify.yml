@@ -1,24 +1,21 @@
+# .github/workflows/netlify.yml
 name: Build and Deploy to Netlify
-
 on:
   push:
-    branches:
-      - develop
-
+  pull_request:
 jobs:
   build:
-    runs-on: ubuntu-latest
-    
+    runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v2
-      
+      - uses: actions/checkout@v3
+
       # ( Build to ./dist or other directory... )
 
       - name: Deploy to Netlify
-        uses: nwtgck/actions-netlify@v2.1.0
+        uses: nwtgck/actions-netlify@v2.0
         with:
-          publish-dir: '../dist'
-          production-branch: develop
+          publish-dir: './dist'
+          production-branch: master
           github-token: ${{ secrets.GITHUB_TOKEN }}
           deploy-message: "Deploy from GitHub Actions"
           enable-pull-request-comment: false
