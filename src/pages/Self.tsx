@@ -2,17 +2,17 @@ import React from 'react';
 import Header from '../component/header/Header';
 import Progress from '../component/progress/Progress';
 import Content from '@/component/content/Content';
-import {Wrapper, TopWrapper} from './styles';
+import S from './styles';
 
 function Self() {
   return (
-    <Wrapper>
-      <TopWrapper>
+    <S.Wrapper>
+      <S.TopWrapper>
         <Header />
         <Progress />
-      </TopWrapper>
+      </S.TopWrapper>
       <Content />
-    </Wrapper>
+    </S.Wrapper>
   );
 }
 

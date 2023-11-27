@@ -1,5 +1,5 @@
 import React from 'react';
-import {Wrapper, Option} from './OptionItem.styles';
+import S from './OptionItem.styles';
 
 interface OptionItemProps {
   idx: number;
@@ -14,11 +14,11 @@ function OptionItem({idx, menuName, selected, onClick}: OptionItemProps) {
   };
 
   return (
-    <Wrapper onClick={handleClick}>
-      <Option selected={selected}>
+    <S.Wrapper onClick={handleClick}>
+      <S.Option selected={selected}>
         0{idx + 1} {menuName}
-      </Option>
-    </Wrapper>
+      </S.Option>
+    </S.Wrapper>
   );
 }
 

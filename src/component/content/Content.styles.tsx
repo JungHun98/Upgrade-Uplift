@@ -6,6 +6,7 @@ const S = {
     flex-grow: 1;
     padding-top: 111px;
   `,
+
   Container: styled.div<{$option: number}>`
     display: flex;
     width: 100%;

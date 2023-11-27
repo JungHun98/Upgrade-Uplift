@@ -1,7 +1,7 @@
 import React from 'react';
 import Icon, {IconType} from '../common/icons';
 import {useModalContext} from '@/provider/modalProvider';
-import Modal from './ModalLayout.styles';
+import S from './ModalLayout.styles';
 
 interface ModalLayoutProps {
   iconName: string;
@@ -40,24 +40,22 @@ function ModalLayout({
     }
   };
   return (
-    <Modal.Wrapper>
-      <Modal.TitleWrapper>
+    <S.Wrapper>
+      <S.TitleWrapper>
         <Icon name={iconName as IconType} size={36} />
-        <Modal.Title>{title}</Modal.Title>
-      </Modal.TitleWrapper>
-      <Modal.DescriptionWrapper>
-        <Modal.Description>{description}</Modal.Description>
-        {imgSrc && <Modal.DescriptionImg src={`/image/${imgSrc}.png`} />}
-      </Modal.DescriptionWrapper>
-      <Modal.ButtonWrapper>
-        <Modal.ButtonProgress onClick={handleBtnLeftClick}>
+        <S.Title>{title}</S.Title>
+      </S.TitleWrapper>
+      <S.DescriptionWrapper>
+        <S.Description>{description}</S.Description>
+        {imgSrc && <S.DescriptionImg src={`/image/${imgSrc}.png`} />}
+      </S.DescriptionWrapper>
+      <S.ButtonWrapper>
+        <S.ButtonProgress onClick={handleBtnLeftClick}>
           {progressText}
-        </Modal.ButtonProgress>
-        <Modal.ButtonClose onClick={handleBtnRightClick}>
-          {closeText}
-        </Modal.ButtonClose>
-      </Modal.ButtonWrapper>
-    </Modal.Wrapper>
+        </S.ButtonProgress>
+        <S.ButtonClose onClick={handleBtnRightClick}>{closeText}</S.ButtonClose>
+      </S.ButtonWrapper>
+    </S.Wrapper>
   );
 }
 export default ModalLayout;

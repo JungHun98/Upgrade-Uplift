@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import {useModalContext, ModalType} from '@/provider/modalProvider';
-import {Wrapper, Background, M} from './Modal.styles';
+import S from './Modal.styles';
 import ExitModal from './exit/ExitModal';
 import ModelChangeModal from './modelChange/ModelChangeModal';
 import PowerTrainModal from './powerTrainChange/PowerTrainModal';
@@ -41,12 +41,12 @@ function Modal() {
   };
   return (
     <>
-      <Background />
-      <Wrapper onClick={closeModal}>
-        <M.Wrapper onClick={handleWrapperClick}>
+      <S.Background />
+      <S.Wrapper onClick={closeModal}>
+        <S.ModalWrapper onClick={handleWrapperClick}>
           <ContentComponent />
-        </M.Wrapper>
-      </Wrapper>
+        </S.ModalWrapper>
+      </S.Wrapper>
     </>
   );
 }

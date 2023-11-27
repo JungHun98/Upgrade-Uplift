@@ -1,12 +1,12 @@
 import React from 'react';
 import bar from '@/assets/icons/progressBar.svg';
-import {Wrapper, Progress} from './ProgressBar.styles';
+import S from './ProgressBar.styles';
 
 function ProgressBar() {
   return (
-    <Wrapper>
-      <Progress src={bar}></Progress>
-    </Wrapper>
+    <S.Wrapper>
+      <S.Progress src={bar}></S.Progress>
+    </S.Wrapper>
   );
 }
 

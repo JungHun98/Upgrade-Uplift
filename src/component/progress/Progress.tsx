@@ -3,7 +3,7 @@ import OptionItem from './OptionItem/OptionItem';
 import ProgressBar from './ProgressBar/ProgressBar';
 import {OptionContext} from '@/provider/optionProvider';
 import {SelectedOptionContext} from '@/provider/selectedOptionProvider';
-import {Wrapper, OptionItemWrapper, SelectedBar} from './Progress.styles';
+import S from './Progress.styles';
 import Warning from '../common/Warning';
 
 function Progress() {
@@ -55,13 +55,13 @@ function Progress() {
       {!isWarning && (
         <Warning text={warningText} onPopup={setIsWarning} onNext={nextStep} />
       )}
-      <Wrapper>
-        <OptionItemWrapper>
+      <S.Wrapper>
+        <S.OptionItemWrapper>
           {menuItemController()}
-          <SelectedBar $active={option} />
-        </OptionItemWrapper>
+          <S.SelectedBar $active={option} />
+        </S.OptionItemWrapper>
         <ProgressBar />
-      </Wrapper>
+      </S.Wrapper>
     </>
   );
 }
