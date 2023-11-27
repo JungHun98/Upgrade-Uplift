@@ -1,5 +1,4 @@
 import React, {useContext, useEffect, useRef, useState} from 'react';
-import styled from 'styled-components';
 import OptionImage from './left/OptionImage';
 import OptionInfo from './right/OptionInfo';
 import TotalEstimate from './totalestimate/TotalEstimate';
@@ -11,6 +10,7 @@ import Spinner from '../common/Spinner';
 import SelectedOptionContent from './SelectedOptionContent';
 import {useGuideFlowState} from '@/provider/guideFlowProvider';
 import {postFetchData} from '@/api/postFetchData';
+import S from './Content.styles';
 
 type cardData = {
   id: number;
@@ -221,9 +221,9 @@ function Content() {
   }
 
   return (
-    <Wrapper>
+    <S.Wrapper>
       {!isLoading && <Spinner />}
-      <Container $option={option}>
+      <S.Container $option={option}>
         {option < 7 ? (
           <>
             {option !== 6 ? (
@@ -250,21 +250,9 @@ function Content() {
         ) : (
           <TotalEstimate></TotalEstimate>
         )}
-      </Container>
-    </Wrapper>
+      </S.Container>
+    </S.Wrapper>
   );
 }
 
 export default Content;
-
-const Wrapper = styled.section`
-  width: 100%;
-  flex-grow: 1;
-  padding-top: 111px;
-`;
-
-const Container = styled.div<{$option: number}>`
-  display: flex;
-  width: 100%;
-  height: 100%;
-`;
