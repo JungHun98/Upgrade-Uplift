@@ -154,7 +154,9 @@ export const GiudFlowProvider = ({children}: {children: React.ReactNode}) => {
     }
   };
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    fetchOptionTag();
+  }, []);
 
   return (
     <GuideFlowStateContext.Provider value={state}>
