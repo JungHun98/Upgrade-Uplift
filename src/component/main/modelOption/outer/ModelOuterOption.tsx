@@ -2,8 +2,8 @@ import React from 'react';
 import ModelOptionDetail from './ModelOptionDetail';
 import styled from 'styled-components';
 import {flexBetween, flexCenter} from '@/style/common';
-import useFetch from '@/component/hooks/useFetch';
-import {sortData} from '@/component/util/sortData';
+import useFetch from '@/hooks/useFetch';
+import {sortData} from '@//util/sortData';
 
 type Option = {
   imageSrc: string;

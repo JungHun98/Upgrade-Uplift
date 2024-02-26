@@ -5,7 +5,7 @@ import {Title2_Medium, Title3_Medium} from '@/style/fonts';
 import {SelectedOptionContext} from '@/provider/selectedOptionProvider';
 import EstimateList from '@/component/common/EstimateList';
 import {TempOptionContext} from '@/provider/tempOptionProvider';
-import {getTotalPrice} from '@/component/util/getTotPrice';
+import {getTotalPrice} from '@//util/getTotPrice';
 import {TempAdditionalOptionsContext} from '@/provider/tempAdditionalOptionProvider';
 import {SelectedAdditionalOptionsContext} from '@/provider/additionalOptionProvider';
 

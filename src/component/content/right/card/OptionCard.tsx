@@ -11,7 +11,7 @@ import TagBox from './Tag';
 import {OptionContext} from '@/provider/optionProvider';
 import {fetchData} from '@/api/fetchData';
 import DetailSelectedBox from '@/component/common/DetailSelectedBox';
-import {getCategory} from '@/component/util/getCategory';
+import {getCategory} from '@//util/getCategory';
 import {useImageSrcDispatch} from '@/provider/tempImageProvider';
 import {useGuideFlowState} from '@/provider/guideFlowProvider';
 import {textParse} from '@/component/common/textParse';
@@ -83,7 +83,9 @@ function OptionCard({selected, onClick, data, isSaved, ratioList}: CardProps) {
   const [toggle, setToggle] = useState(false);
   const {option} = useContext(OptionContext);
   const {showGuide} = useGuideFlowState();
-  const [descriptionData, setDescriptionData] = useState<DetailData[] | null>(null);
+  const [descriptionData, setDescriptionData] = useState<DetailData[] | null>(
+    null,
+  );
   const [rate, setRate] = useState<number>(0);
   const dispatch = useImageSrcDispatch();
   const clickedToggle = useCallback(

@@ -1,7 +1,7 @@
 import React from 'react';
 import Icon from '@/component/common/icons';
 import S from './ModeChangeModal.styles';
-import {getTitleByPath} from '@/component/util/getTitleByPath';
+import {getTitleByPath} from '@/util/getTitleByPath';
 import {useModalContext} from '@/provider/modalProvider';
 
 function ModeChangeModal() {

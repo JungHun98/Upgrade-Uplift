@@ -4,7 +4,7 @@ import {colors} from '@/style/theme';
 import selector from '@/assets/icons/selector.svg';
 import {Title3_Medium} from '@/style/fonts';
 import {useModalContext} from '@/provider/modalProvider';
-import {getTitleByPath} from '@/component/util/getTitleByPath';
+import {getTitleByPath} from '@//util/getTitleByPath';
 
 function ModeSelector() {
   const {openModal} = useModalContext();

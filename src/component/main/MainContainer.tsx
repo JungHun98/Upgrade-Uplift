@@ -12,7 +12,7 @@ import ModelOption from './modelOption/ModelOption';
 import {colors} from '@/style/theme';
 import {Body1_Medium, Title5_Regular} from '@/style/fonts';
 import Icon from '../common/icons';
-import {useScroll} from '../hooks/useScroll';
+import {useScroll} from '@/hooks/useScroll';
 import {useNavigate} from 'react-router-dom';
 
 function MainContainer() {

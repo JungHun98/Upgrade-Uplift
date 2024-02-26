@@ -8,9 +8,9 @@ import {TempOptionContext} from '@/provider/tempOptionProvider';
 import {SelectedOptionContext} from '@/provider/selectedOptionProvider';
 import {TempAdditionalOptionsContext} from '@/provider/tempAdditionalOptionProvider';
 import {SelectedAdditionalOptionsContext} from '@/provider/additionalOptionProvider';
-import {getTotalPrice} from '@/component/util/getTotPrice';
+import {getTotalPrice} from '@//util/getTotPrice';
 import Warning from '@/component/common/Warning';
-import { getCategory } from '@/component/util/getCategory';
+import {getCategory} from '@//util/getCategory';
 
 interface props {
   onClick: () => void;

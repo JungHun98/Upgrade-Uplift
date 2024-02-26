@@ -4,7 +4,7 @@ import OptionCard from './card/OptionCard';
 import {cardDataType} from '../contentInterface';
 import {OptionContext} from '@/provider/optionProvider';
 import {fetchData} from '@/api/fetchData';
-import {getCategory} from '@/component/util/getCategory';
+import {getCategory} from '@//util/getCategory';
 
 interface cardListProps {
   cardData: cardDataType[];
