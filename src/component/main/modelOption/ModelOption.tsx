@@ -4,12 +4,12 @@ import React from 'react';
 import styled from 'styled-components';
 import Icon from '@/component/common/icons';
 
-import ModelPointOption from './point/ModelPointOption';
-import ModelOuterOption from './outer/ModelOuterOption';
-import ModelInnerOption from './inner/ModelInnerOption';
-import ModelDefaultOption from './default/ModelDefaultOption';
+import ModelPointOption from './Point/ModelPointOption';
+import ModelOuterOption from './Outer/ModelOuterOption';
+import ModelInnerOption from './Inner/ModelInnerOption';
+import ModelDefaultOption from './Default/ModelDefaultOption';
 
-function ModelOption({name}: {name: string}) {
+function ModelOptionContainer({name}: {name: string}) {
   const modelOptionList = {
     '핵심 옵션': <ModelPointOption />,
     '외장 색상': <ModelOuterOption />,
@@ -25,7 +25,7 @@ function ModelOption({name}: {name: string}) {
   );
 }
 
-export default ModelOption;
+export default ModelOptionContainer;
 
 const Option = {
   Wrapper: styled.div`

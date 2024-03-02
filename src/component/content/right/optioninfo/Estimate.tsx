@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import {colors} from '@/style/theme';
-import {Title4_Medium, Title3_Medium, Body2_Regular} from '@/style/fonts';
+import {Title4_Medium} from '@/style/fonts';
 
-import Selection from './estimate/Selection';
+import Selection from './Estimate/Selection';
 
 function Estimate() {
   return (

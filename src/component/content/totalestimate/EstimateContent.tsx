@@ -1,9 +1,9 @@
 import React, {useContext} from 'react';
 import styled from 'styled-components';
-import Top from './estimatecontent/Top';
-import Middle from './estimatecontent/Middle';
-import Bottom from './estimatecontent/Bottom';
-import Firework from './estimatecontent/FireWork';
+import Top from './Estimatecontent/Top';
+import Middle from './Estimatecontent/Middle';
+import Bottom from './Estimatecontent/Bottom';
+import Firework from './Estimatecontent/FireWork';
 import {colors} from '@/style/theme';
 import {Body2_Medium} from '@/style/fonts';
 import {SelectedOptionContext} from '@/provider/selectedOptionProvider';
@@ -67,7 +67,7 @@ function EstimateContent() {
       </Button>
     );
   });
-  
+
   return (
     <Wrapper>
       <Top></Top>

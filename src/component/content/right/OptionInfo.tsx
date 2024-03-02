@@ -7,7 +7,7 @@ import React, {
 } from 'react';
 import styled from 'styled-components';
 import OptionCardList from './OptionCardList';
-import Modal from './optioninfo/Modal';
+import Modal from './Optioninfo/Modal';
 import Footer from './Footer';
 import CardbModal from '@/component/common/CardbModal';
 import {flexCenter} from '../../../style/common';

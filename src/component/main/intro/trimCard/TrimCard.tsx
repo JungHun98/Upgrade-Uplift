@@ -7,7 +7,7 @@ import {styled} from 'styled-components';
 import {useNavigate} from 'react-router-dom';
 
 import trim from '@/assets/mocks/trim.json';
-import TrimDescription from './trimDescription/TrimDescription';
+import TrimDescription from './TrimDescription/TrimDescription';
 
 type TrimData = {
   id: number;

@@ -1,7 +1,7 @@
 import {Title4_Regular} from '@/style/fonts';
 import React from 'react';
 import styled from 'styled-components';
-import TrimDescriptionDetail from './trimDescriptionDetail/TrimDescriptionDetail';
+import TrimDescriptionDetail from './TrimDescriptionDetail/TrimDescriptionDetail';
 type TrimDescriptionData = {
   title: string;
   hasDescription: boolean;

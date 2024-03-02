@@ -6,7 +6,7 @@ import React, {
   useState,
 } from 'react';
 import styled from 'styled-components';
-import Modal from './optioninfo/Modal';
+import Modal from './Optioninfo/Modal';
 import Footer from './Footer';
 import {flexBetween, flexCenter} from '../../../style/common';
 import {colors} from '../../../style/theme';

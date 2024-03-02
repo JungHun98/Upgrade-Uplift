@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import {colors} from '@/style/theme';
-import {Title4_Medium, Title3_Medium, Body2_Regular} from '@/style/fonts';
+import {Body2_Regular} from '@/style/fonts';
 
 function Selection() {
   return (

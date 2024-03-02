@@ -1,6 +1,6 @@
 import React, {useEffect, useContext, useRef, useState} from 'react';
 import styled, {keyframes} from 'styled-components';
-import OptionCard from './card/OptionCard';
+import OptionCard from './Card/OptionCard';
 import {cardDataType} from '../contentInterface';
 import {OptionContext} from '@/provider/optionProvider';
 import {fetchData} from '@/api/fetchData';

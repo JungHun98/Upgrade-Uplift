@@ -1,7 +1,7 @@
 import React, {useContext, useEffect, useRef, useState} from 'react';
-import OptionImage from './left/OptionImage';
-import OptionInfo from './right/OptionInfo';
-import TotalEstimate from './totalestimate/TotalEstimate';
+import OptionImage from './Left/OptionImage';
+import OptionInfo from './Right/OptionInfo';
+import TotalEstimate from './Totalestimate/TotalEstimate';
 import {OptionContext} from '@/provider/optionProvider';
 import {TempOptionContext} from '@/provider/tempOptionProvider';
 import {SelectedOptionContext} from '@/provider/selectedOptionProvider';

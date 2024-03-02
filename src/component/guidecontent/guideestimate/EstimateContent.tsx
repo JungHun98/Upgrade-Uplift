@@ -1,6 +1,6 @@
-import React, {useContext, useEffect} from 'react';
+import React, {useContext} from 'react';
 import styled from 'styled-components';
-import Firework from '@/component/content/totalestimate/estimatecontent/FireWork';
+import Firework from '@/component/content/Totalestimate/Estimatecontent/FireWork';
 import {colors} from '@/style/theme';
 import {
   Body1_Medium,

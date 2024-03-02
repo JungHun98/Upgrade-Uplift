@@ -1,12 +1,12 @@
 import React, {useEffect} from 'react';
 import {useModalContext, ModalType} from '@/provider/modalProvider';
 import S from './Modal.styles';
-import ExitModal from './exit/ExitModal';
-import ModelChangeModal from './modelChange/ModelChangeModal';
-import PowerTrainModal from './powerTrainChange/PowerTrainModal';
-import SelfChangeModal from './modeChange/SelfChangeModal';
-import GuideChangeModal from './modeChange/GuideChangeModal';
-import ModeChangeModal from './modeChange/ModeChangeModal';
+import ExitModal from './Exit/ExitModal';
+import ModelChangeModal from './ModelChange/ModelChangeModal';
+import PowerTrainModal from './PowerTrainChange/PowerTrainModal';
+import SelfChangeModal from './ModeChange/SelfChangeModal';
+import GuideChangeModal from './ModeChange/GuideChangeModal';
+import ModeChangeModal from './ModeChange/ModeChangeModal';
 
 type NonNullableModalType = Exclude<ModalType, null>;
 

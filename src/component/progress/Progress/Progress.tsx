@@ -1,10 +1,10 @@
 import React, {useContext, useState} from 'react';
-import OptionItem from './OptionItem/OptionItem';
-import ProgressBar from './ProgressBar/ProgressBar';
+import OptionItem from '../OptionItem/OptionItem';
+import ProgressBar from '../ProgressBar/ProgressBar';
 import {OptionContext} from '@/provider/optionProvider';
 import {SelectedOptionContext} from '@/provider/selectedOptionProvider';
 import S from './Progress.styles';
-import Warning from '../common/Warning';
+import Warning from '../../common/Warning';
 
 function Progress() {
   const {option, setOption} = useContext(OptionContext);

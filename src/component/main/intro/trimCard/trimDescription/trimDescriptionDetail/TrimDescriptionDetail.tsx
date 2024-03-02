@@ -1,6 +1,7 @@
 import React from 'react';
 import DetailDescription from './DetailDescription';
 import DetailFeature from './DetailFeature';
+
 type TrimDescriptionData = {
   title: string;
   hasDescription: boolean;

@@ -2,7 +2,7 @@ import React from 'react';
 import Header from '@/component/header/Header';
 import GuideContent from '@/component/guidecontent/GuideContent';
 import Content from '@/component/content/Content';
-import Progress from '@/component/progress/Progress';
+import Progress from '@/component/progress/Progress/Progress';
 import S from './styles';
 import {useGuideFlowState} from '@/provider/guideFlowProvider';
 

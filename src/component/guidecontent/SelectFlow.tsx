@@ -2,8 +2,8 @@ import React, {useRef, useState} from 'react';
 import styled, {css} from 'styled-components';
 import {Body1_Medium, Title1_Medium, Title3_Regular} from '@/style/fonts';
 import {colors} from '@/style/theme';
-import GridList from './selectflow/GridList';
-import CardList from './selectflow/CardList';
+import GridList from './Selectflow/GridList';
+import CardList from './Selectflow/CardList';
 import {flexCenter} from '@/style/common';
 import {useGuideFlowState, GuideFlowState} from '@/provider/guideFlowProvider';
 

@@ -1,7 +1,7 @@
 import React, {useContext, useState} from 'react';
 import styled from 'styled-components';
 import EstimateHeader from './EstimateHeader';
-import DetailEstimate from './bottom/DetailEstimate';
+import DetailEstimate from './DetailEstimate';
 import {Option, SelectedOptionContext} from '@/provider/selectedOptionProvider';
 
 interface Props {

@@ -3,12 +3,11 @@ import Header from '../header/Header';
 import styled from 'styled-components';
 import main from '/image/main.png';
 import {flexBetween, flexCenter} from '@/style/common';
-import TrimCardList from './intro/trimCard/TrimCard';
-import IntroTitle from './intro/IntroTitle';
-import IntroShowMore from './intro/IntroShowMore';
-import ModelTitleList from './modelTitle/ModelTitle';
-import ModelInfoList from './modelInfo/ModelInfo';
-import ModelOption from './modelOption/ModelOption';
+import TrimCardList from './Intro/TrimCard/TrimCard';
+import IntroTitle from './Intro/IntroTitle';
+import IntroShowMore from './Intro/IntroShowMore';
+import ModelTitleList from './ModelTitle/ModelTitle';
+import ModelInfoList from './ModelInfo/ModelInfo';
 import {colors} from '@/style/theme';
 import {Body1_Medium, Title5_Regular} from '@/style/fonts';
 import Icon from '../common/icons';
@@ -39,9 +38,7 @@ function MainContainer() {
       <Trim.InfoWrapper>
         <ModelInfoList />
       </Trim.InfoWrapper>
-      <Trim.OptionWrapper>
-        
-      </Trim.OptionWrapper>
+      <Trim.OptionWrapper></Trim.OptionWrapper>
       <Trim.CarMakeWrapper>
         <Trim.CarMake>
           <Trim.CarMakeP

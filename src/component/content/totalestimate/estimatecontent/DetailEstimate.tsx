@@ -11,7 +11,6 @@ import {
 } from '@/style/fonts';
 import {colors} from '@/style/theme';
 import {flexCenter} from '@/style/common';
-import DetailBox from '@/component/common/DetilBox';
 
 interface Props {
   detailOpen: boolean;
@@ -36,7 +35,7 @@ const EditIcon = () => {
   );
 };
 
-function DetailEstimate({detailOpen, optionIndex, option}: Props) {
+function DetailEstimate({optionIndex, option}: Props) {
   const {setOption} = useContext(OptionContext);
 
   const handleButtonClick = () => {
@@ -54,9 +53,7 @@ function DetailEstimate({detailOpen, optionIndex, option}: Props) {
         <ContentBox>
           <ContentLeft>
             {option.value}
-            <DeatailBoxWrapper>
-              {/* <DetailBox isOpen={detailOpen} id={1}></DetailBox> */}
-            </DeatailBoxWrapper>
+            <DeatailBoxWrapper></DeatailBoxWrapper>
           </ContentLeft>
           <ContentRight>
             {`+ ${option.price.toLocaleString()}원`}

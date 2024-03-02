@@ -62,7 +62,7 @@ function TagBox({id}: Props) {
         setTagArr(tags);
       }
     };
-    // getTags();
+    getTags();
   }, []);
   return <Wrapper>{tagArr}</Wrapper>;
 }

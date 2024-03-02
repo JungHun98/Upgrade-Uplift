@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
-import EstimateContent from './guideestimate/EstimateContent';
+import EstimateContent from './Guideestimate/EstimateContent';
 import LoadingAnimation from '@/component/loding/LoadingAnimation';
 import {flexCenter} from '@/style/common';
 
