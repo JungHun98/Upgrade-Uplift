@@ -5,7 +5,7 @@ import {fetchData} from '@/api/fetchData';
 import {flexBetween, flexCenter} from '@/style/common';
 import {colors} from '@/style/theme';
 import {Body1_Medium, Body2_Medium, Popup_Regular} from '@/style/fonts';
-import Icon from '@/component/common/icons';
+import Icon from '@/component/common/Icons';
 
 type Option = {
   imageSrc: string;

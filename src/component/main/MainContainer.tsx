@@ -10,7 +10,7 @@ import ModelTitleList from './ModelTitle/ModelTitle';
 import ModelInfoList from './ModelInfo/ModelInfo';
 import {colors} from '@/style/theme';
 import {Body1_Medium, Title5_Regular} from '@/style/fonts';
-import Icon from '../common/icons';
+import Icon from '../common/Icons';
 import {useScroll} from '@/hooks/useScroll';
 import {useNavigate} from 'react-router-dom';
 

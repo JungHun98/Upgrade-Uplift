@@ -2,7 +2,7 @@ import {flexCenter} from '@/style/common';
 import {Title4_Medium} from '@/style/fonts';
 import React from 'react';
 import styled from 'styled-components';
-import Icon from '@/component/common/icons';
+import Icon from '@/component/common/Icons';
 
 import ModelPointOption from './Point/ModelPointOption';
 import ModelOuterOption from './Outer/ModelOuterOption';

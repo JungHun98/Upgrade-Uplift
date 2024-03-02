@@ -1,5 +1,5 @@
 import React from 'react';
-import Icon from '@/component/common/icons';
+import Icon from '@/component/common/Icons';
 import S from './ModeChangeModal.styles';
 import {getTitleByPath} from '@/util/getTitleByPath';
 import {useModalContext} from '@/provider/modalProvider';

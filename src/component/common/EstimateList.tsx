@@ -4,7 +4,6 @@ import {HeaderLayout, SelectionLayout} from './estimateInterface';
 import {Option, SelectedOptionContext} from '@/provider/selectedOptionProvider';
 import {TempOptionContext} from '@/provider/tempOptionProvider';
 import Estimate from './estimate/Estimate';
-import {OptionContext} from '@/provider/optionProvider';
 import {SelectedAdditionalOptionsContext} from '@/provider/additionalOptionProvider';
 import {TempAdditionalOptionsContext} from '@/provider/tempAdditionalOptionProvider';
 interface HeaderTitle {
@@ -38,7 +37,6 @@ function EstimateList({
   headerLayout,
   selectionLayout,
 }: Props) {
-  const {option} = useContext(OptionContext);
   const {selectedOptions} = useContext(SelectedOptionContext);
   const {tempOption} = useContext(TempOptionContext);
   const {selectedAdditionalOption} = useContext(

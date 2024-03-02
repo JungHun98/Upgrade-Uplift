@@ -1,4 +1,4 @@
-import Icon from '@/component/common/icons';
+import Icon from '@/component/common/Icons';
 import {flexCenter} from '@/style/common';
 import {Title5_Regular} from '@/style/fonts';
 import {colors} from '@/style/theme';

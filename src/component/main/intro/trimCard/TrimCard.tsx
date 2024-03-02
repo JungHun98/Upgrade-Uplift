@@ -1,4 +1,4 @@
-import Icon from '@/component/common/icons';
+import Icon from '@/component/common/Icons';
 import {flexBetween} from '@/style/common';
 import {Body2_Regular, Title2_Medium} from '@/style/fonts';
 import {colors} from '@/style/theme';

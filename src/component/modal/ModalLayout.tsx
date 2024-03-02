@@ -1,5 +1,5 @@
 import React from 'react';
-import Icon, {IconType} from '../common/icons';
+import Icon, {IconType} from '../common/Icons';
 import {useModalContext} from '@/provider/modalProvider';
 import S from './ModalLayout.styles';
 
