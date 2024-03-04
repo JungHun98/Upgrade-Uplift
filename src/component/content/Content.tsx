@@ -1,16 +1,19 @@
 import React, {useContext, useEffect, useRef, useState} from 'react';
-import OptionImage from './Left/OptionImage';
-import OptionInfo from './Right/OptionInfo';
-import TotalEstimate from './Totalestimate/TotalEstimate';
+import OptionImage from '@/component/content/Left/OptionImage';
+import OptionInfo from '@/component/content/Right/OptionInfo';
+import TotalEstimate from '@/component/content/Totalestimate/TotalEstimate';
+import Spinner from '@/component/common/Spinner';
+import SelectedOptionContent from '@/component/content/SelectedOptionContent';
+
 import {OptionContext} from '@/provider/optionProvider';
 import {TempOptionContext} from '@/provider/tempOptionProvider';
 import {SelectedOptionContext} from '@/provider/selectedOptionProvider';
-import {fetchData} from '@/api/fetchData';
-import Spinner from '../common/Spinner';
-import SelectedOptionContent from './SelectedOptionContent';
 import {useGuideFlowState} from '@/provider/guideFlowProvider';
+
+import {fetchData} from '@/api/fetchData';
 import {postFetchData} from '@/api/postFetchData';
-import S from './Content.styles';
+
+import S from '@/component/content/Content.styles';
 
 type cardData = {
   id: number;

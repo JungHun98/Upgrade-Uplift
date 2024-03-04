@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
-import SelectedOptionInfo from './Right/SelectedOptionInfo';
-import AdditionalOptionImage from './Left/AdditionalOptionImage';
+import SelectedOptionInfo from '@/component/content/Right/SelectedOptionInfo';
+import AdditionalOptionImage from '@/component/content/Left/AdditionalOptionImage';
+
 interface cardData {
   id: number;
   name: string;
