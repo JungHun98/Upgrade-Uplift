@@ -9,12 +9,7 @@ import {
   CLOSE_MODAL,
 } from '@/provider/cardbProvider';
 
-interface CardbProps {
-  children: string;
-  isTitle: boolean;
-}
-
-const dictionaryIcon = (fill: string) => {
+const dictionaryIcon = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -55,7 +50,7 @@ const dictionaryIcon = (fill: string) => {
   );
 };
 
-function Cardb({children, isTitle}: CardbProps) {
+function Cardb({children}: {children: string}) {
   const cardbState = useCardbState();
   const dispatch = useCardbDispatch();
 
@@ -79,7 +74,6 @@ function Cardb({children, isTitle}: CardbProps) {
         cardbState.modalOpen && cardbState.dataObject.keyword === children
       }
     >
-      {/* {isTitle && <IconBox>{dictionaryIcon()}</IconBox>} */}
       <TextBox>{children}</TextBox>
     </Wrapper>
   );
@@ -110,20 +104,11 @@ const TextBox = styled.div`
   display: inline-block;
 `;
 
-const IconBox = styled.div`
-  width: 22px;
-  height: 22px;
-`;
-
 export const textParse = (text: string) => {
   const parts = text.split(/(<cardb>.*?<\/cardb>)/).map((part, index) => {
     if (part.startsWith('<cardb>')) {
       const tagContent = part.replace(/<\/?cardb>/g, '');
-      return (
-        <Cardb key={index} isTitle={true}>
-          {tagContent}
-        </Cardb>
-      );
+      return <Cardb key={index}>{tagContent}</Cardb>;
     }
     return part;
   });

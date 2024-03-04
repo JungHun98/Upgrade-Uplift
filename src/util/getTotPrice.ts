@@ -1,5 +1,6 @@
 import {Option} from '@/provider/selectedOptionProvider';
-import {cardDataType} from '../content/contentInterface';
+import {cardDataType} from '@/component/content/contentInterface';
+
 const DEFAULT_PRICE = 43460000;
 export const getTotalPrice = (
   selectedOptions: Option[],

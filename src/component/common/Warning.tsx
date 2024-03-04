@@ -3,12 +3,16 @@ import styled from 'styled-components';
 import {flexCenter} from '@/style/common';
 import {colors} from '@/style/theme';
 import {Label2_Regular, Title4_Medium} from '@/style/fonts';
-interface warningProps {
+
+function Warning({
+  text,
+  onPopup,
+  onNext,
+}: {
   text: string;
   onPopup: (state: boolean) => void;
   onNext: () => void;
-}
-function Warning({text, onPopup, onNext}: warningProps) {
+}) {
   return (
     <Warnings.Wrapper>
       <Warnings.Box>
