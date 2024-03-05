@@ -4,9 +4,11 @@ import SelectFlow from './SelectFlow';
 import GuideEstimate from './GuideEstimate';
 import {useGuideFlowState} from '@/provider/guideFlowProvider';
 import {fetchData} from '@/api/fetchData';
-import {SelectedOptionContext, Option} from '@/provider/selectedOptionProvider';
+import {SelectedOptionContext} from '@/provider/selectedOptionProvider';
 import {postFetchData} from '@/api/postFetchData';
 import {TempAdditionalOptionsContext} from '@/provider/tempAdditionalOptionProvider';
+
+import { Option } from '@/@types/Response';
 
 interface Url {
   [key: string]: string;

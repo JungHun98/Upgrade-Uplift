@@ -1,11 +1,13 @@
 import React, {useContext, useEffect, useState} from 'react';
 import styled from 'styled-components';
-import type {EstimateHeader, SelectionLayout} from '@/@types/Layout';
-import {Option, SelectedOptionContext} from '@/provider/selectedOptionProvider';
+import {SelectedOptionContext} from '@/provider/selectedOptionProvider';
 import {TempOptionContext} from '@/provider/tempOptionProvider';
 import Estimate from './estimate/Estimate';
 import {SelectedAdditionalOptionsContext} from '@/provider/additionalOptionProvider';
 import {TempAdditionalOptionsContext} from '@/provider/tempAdditionalOptionProvider';
+
+import { EstimateHeader, SelectionLayout } from '@/@types/Layout';
+import { Option } from '@/@types/Response';
 
 interface HeaderTitle {
   [key: string]: string;
