@@ -1,6 +1,6 @@
 import React, {useContext, useEffect, useState} from 'react';
 import styled from 'styled-components';
-import type {EstimateHeader, Selection} from '@/@types/Layout';
+import type {EstimateHeader, SelectionLayout} from '@/@types/Layout';
 import {Option, SelectedOptionContext} from '@/provider/selectedOptionProvider';
 import {TempOptionContext} from '@/provider/tempOptionProvider';
 import Estimate from './estimate/Estimate';
@@ -22,7 +22,7 @@ interface Props {
   gap: number;
   sidePadding: number;
   headerLayout: EstimateHeader;
-  selectionLayout: Selection;
+  selectionLayout: SelectionLayout;
 }
 
 const headerTitles: HeaderTitle = {

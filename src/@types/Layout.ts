@@ -3,7 +3,7 @@ export interface EstimateHeader {
   fontSize: number;
 }
 
-export interface Selection {
+export interface SelectionLayout {
   flexWidth: number;
   gap: number;
   fontSize: number;
