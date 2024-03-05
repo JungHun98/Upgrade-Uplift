@@ -1,9 +1,9 @@
-export interface HeaderLayout {
+export interface EstimateHeader {
   height: number;
   fontSize: number;
 }
 
-export interface SelectionLayout {
+export interface Selection {
   flexWidth: number;
   gap: number;
   fontSize: number;

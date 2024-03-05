@@ -1,14 +1,16 @@
 import React, {useContext, useEffect, useState} from 'react';
 import styled from 'styled-components';
-import {HeaderLayout, SelectionLayout} from './estimateInterface';
+import type {EstimateHeader, Selection} from '@/@types/Layout';
 import {Option, SelectedOptionContext} from '@/provider/selectedOptionProvider';
 import {TempOptionContext} from '@/provider/tempOptionProvider';
 import Estimate from './estimate/Estimate';
 import {SelectedAdditionalOptionsContext} from '@/provider/additionalOptionProvider';
 import {TempAdditionalOptionsContext} from '@/provider/tempAdditionalOptionProvider';
+
 interface HeaderTitle {
   [key: string]: string;
 }
+
 interface TotalEstimateData {
   [key: string]: Option[];
   car: Option[];
@@ -19,8 +21,8 @@ interface TotalEstimateData {
 interface Props {
   gap: number;
   sidePadding: number;
-  headerLayout: HeaderLayout;
-  selectionLayout: SelectionLayout;
+  headerLayout: EstimateHeader;
+  selectionLayout: Selection;
 }
 
 const headerTitles: HeaderTitle = {
