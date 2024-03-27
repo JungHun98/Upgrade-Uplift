@@ -14,7 +14,7 @@ import {Body2_Medium, Title1_Medium, Title3_Regular} from '@/style/fonts';
 import {cardDataType} from '../contentInterface';
 import {OptionContext} from '@/provider/optionProvider';
 import SelectedOptionCardList from './SelectedOptionCardList';
-import CardbModal from '@/component/common/CardbModal';
+import CardbModal from '@/component/common/cardbModal/CardbModal';
 
 interface cardDataProps {
   cardData: cardDataType[];

@@ -1,13 +1,11 @@
 import React from 'react';
-import {colors} from '@/style/theme';
-import styled from 'styled-components';
-import {Popup_Regular, Title4_Medium} from '@/style/fonts';
-import {flexBetween, flexCenter} from '@/style/common';
 import {
   useCardbDispatch,
   useCardbState,
   CLOSE_MODAL,
 } from '@/provider/cardbProvider';
+
+import S from './CardbModal.style';
 
 const bookIcon = () => {
   return (
@@ -61,85 +59,24 @@ function CardbModal() {
   };
 
   return (
-    <Wrapper $modalOpen={modalOpen}>
-      <Header.Container>
-        <Header.Left>
-          <Header.IconBox>{bookIcon()}</Header.IconBox>
-          <Header.Title>
+    <S.Wrapper $modalOpen={modalOpen}>
+      <S.Header.Container>
+        <S.Header.Left>
+          <S.Header.IconBox>{bookIcon()}</S.Header.IconBox>
+          <S.Header.Title>
             {attachParticle(dataObject.keyword)} 뭔가요?
-          </Header.Title>
-        </Header.Left>
-        <Header.CloseBtn onClick={handleClickBtn}>이해했어요!</Header.CloseBtn>
-      </Header.Container>
-      <Description.Container>
-        {dataObject.imgSrc && <ImageBox $src={dataObject.imgSrc} />}
+          </S.Header.Title>
+        </S.Header.Left>
+        <S.Header.CloseBtn onClick={handleClickBtn}>
+          이해했어요!
+        </S.Header.CloseBtn>
+      </S.Header.Container>
+      <S.Description.Container>
+        {dataObject.imgSrc && <S.ImageBox $src={dataObject.imgSrc} />}
         {dataObject.description}
-      </Description.Container>
-    </Wrapper>
+      </S.Description.Container>
+    </S.Wrapper>
   );
 }
 
 export default CardbModal;
-
-const Wrapper = styled.div<{$modalOpen: boolean}>`
-  ${({$modalOpen}) => !$modalOpen && 'display: none;'}
-  position: absolute;
-  bottom: 120px;
-  width: 375px;
-  min-height: 165px;
-  border-radius: 6px;
-  padding: 16px 20px 20px 20px;
-  background: ${colors.Cool_Grey};
-  box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.3);
-  z-index: 50;
-  div {
-    color: ${colors.Hyundai_White};
-  }
-`;
-
-const Header = {
-  Container: styled.div`
-    ${flexBetween}
-  `,
-  Left: styled.div`
-    ${flexCenter}
-    gap: 6px;
-  `,
-  IconBox: styled.div`
-    ${flexCenter}
-    width: 18px;
-    height: 18px;
-  `,
-  Title: styled.div`
-    ${Title4_Medium}
-  `,
-
-  CloseBtn: styled.button`
-    display: inline-flex;
-    padding: 5px 9px;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-    border-radius: 2px;
-    background: ${colors.Cool_Grey_004};
-  `,
-};
-
-const ImageBox = styled.div<{$src: string}>`
-  width: 337px;
-  height: 145px;
-  margin-bottom: 14px;
-  border-radius: 4px;
-  background: url(${({$src}) => $src}) no-repeat;
-  background-size: cover;
-`;
-
-const Description = {
-  Container: styled.div`
-    ${Popup_Regular}
-    width: 100%;
-    margin-top: 12px;
-    padding-top: 14px;
-    border-top: 1px solid ${colors.Cool_Grey_004};
-  `,
-};

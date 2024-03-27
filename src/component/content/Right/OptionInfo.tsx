@@ -9,7 +9,7 @@ import styled from 'styled-components';
 import OptionCardList from './OptionCardList';
 import Modal from './Optioninfo/Modal';
 import Footer from './Footer';
-import CardbModal from '@/component/common/CardbModal';
+import CardbModal from '@/component/common/cardbModal/CardbModal';
 import {flexCenter} from '@/style/common';
 import {colors} from '@/style/theme';
 import {Title1_Medium, Title3_Regular} from '@/style/fonts';
