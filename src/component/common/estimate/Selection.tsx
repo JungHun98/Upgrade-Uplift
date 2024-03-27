@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import {colors} from '@/style/theme';
 import {Body2_Regular} from '@/style/fonts';
 import {SelectionLayout} from '@/@types/Layout';
-import {textParse} from '../cardb/Cardb';
+import {textParse} from '@/util/textParse';
 
 interface SelectionProps {
   selectionLayout: SelectionLayout;

@@ -14,7 +14,7 @@ import DetailSelectedBox from '@/component/common/detailSelectBox/DetailSelected
 import {getCategory} from '@//util/getCategory';
 import {useImageSrcDispatch} from '@/provider/tempImageProvider';
 import {useGuideFlowState} from '@/provider/guideFlowProvider';
-import {textParse} from '@/component/common/cardb/Cardb';
+import {textParse} from '@/util/textParse';
 
 interface Info {
   title: string;
