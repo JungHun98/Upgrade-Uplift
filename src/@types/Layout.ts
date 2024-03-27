@@ -1,4 +1,4 @@
-export interface HeaderLayout {
+export interface EstimateHeader {
   height: number;
   fontSize: number;
 }

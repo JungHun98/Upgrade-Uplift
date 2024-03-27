@@ -2,7 +2,9 @@ import React, {useContext, useState} from 'react';
 import styled from 'styled-components';
 import EstimateHeader from './EstimateHeader';
 import DetailEstimate from './DetailEstimate';
-import {Option, SelectedOptionContext} from '@/provider/selectedOptionProvider';
+import {SelectedOptionContext} from '@/provider/selectedOptionProvider';
+
+import { Option } from '@/@types/Response';
 
 interface Props {
   totalPrice: number;

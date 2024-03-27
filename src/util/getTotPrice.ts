@@ -1,5 +1,5 @@
-import {Option} from '@/provider/selectedOptionProvider';
 import {cardDataType} from '@/component/content/contentInterface';
+import {Option} from '@/@types/Response';
 
 const DEFAULT_PRICE = 43460000;
 export const getTotalPrice = (

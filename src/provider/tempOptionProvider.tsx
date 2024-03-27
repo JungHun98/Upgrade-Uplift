@@ -1,14 +1,5 @@
 import React, {useState, createContext} from 'react';
-
-interface Option {
-  key: string;
-  value: string;
-  category: string;
-  price: number;
-  id: number;
-  imgSrc: string;
-  userSelect: boolean;
-}
+import { Option } from '@/@types/Response';
 
 const initialOption: Option = {
   key: '',

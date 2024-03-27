@@ -1,7 +1,6 @@
 import React, {useContext} from 'react';
 import styled from 'styled-components';
-import {OptionContext} from '@/provider/optionProvider';
-import {Option} from '@/provider/selectedOptionProvider';
+import { OptionContext } from '@/provider/optionProvider';
 
 import {
   Title1_Medium,
@@ -11,6 +10,8 @@ import {
 } from '@/style/fonts';
 import {colors} from '@/style/theme';
 import {flexCenter} from '@/style/common';
+
+import { Option } from '@/@types/Response';
 
 interface Props {
   detailOpen: boolean;

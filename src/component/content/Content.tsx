@@ -13,6 +13,8 @@ import {useGuideFlowState} from '@/provider/guideFlowProvider';
 import {fetchData} from '@/api/fetchData';
 import {postFetchData} from '@/api/postFetchData';
 
+import { Option } from '@/@types/Response';
+
 import S from '@/component/content/Content.styles';
 
 type cardData = {
@@ -22,16 +24,9 @@ type cardData = {
   price: number;
   saleRate?: number;
 };
+
 type OptionUrls = Record<number, string | string[]>;
-interface Option {
-  key: string;
-  value: string;
-  category: string;
-  price: number;
-  id: number;
-  imgSrc: string;
-  userSelect: boolean;
-}
+
 const keyMapping: Record<number, string> = {
   0: '파워트레인',
   1: '구동 방식',

@@ -2,9 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 import {Title4_Medium} from '@/style/fonts';
 import {colors} from '@/style/theme';
-import {SelectionLayout} from '../estimateInterface';
-import {Option} from '@/provider/selectedOptionProvider';
 import Selection from './Selection';
+
+import {SelectionLayout} from '@/@types/Layout';
+import {Option} from '@/@types/Response';
 
 interface HeaderProps {
   height: number;

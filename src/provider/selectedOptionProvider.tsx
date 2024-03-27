@@ -1,15 +1,5 @@
-import React, {useState, createContext} from 'react';
-
-export interface Option {
-  key: string;
-  value?: string;
-  name?: string;
-  category: string;
-  price: number;
-  id: number;
-  imgSrc: string;
-  userSelect: boolean;
-}
+import React, { useState, createContext } from 'react';
+import { Option } from '@/@types/Response';
 
 interface SelectedOptionContextType {
   selectedOptions: Option[];

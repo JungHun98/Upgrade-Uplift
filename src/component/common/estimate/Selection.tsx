@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import {colors} from '@/style/theme';
 import {Body2_Regular} from '@/style/fonts';
-import {SelectionLayout} from '../estimateInterface';
+import {SelectionLayout} from '@/@types/Layout';
 import {textParse} from '../textParse';
 
 interface SelectionProps {
