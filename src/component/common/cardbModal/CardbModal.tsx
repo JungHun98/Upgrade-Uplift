@@ -5,7 +5,7 @@ import {
   CLOSE_MODAL,
 } from '@/provider/cardbProvider';
 
-import S from './CardbModal.style';
+import S from './CardbModal.styles';
 
 const bookIcon = () => {
   return (
