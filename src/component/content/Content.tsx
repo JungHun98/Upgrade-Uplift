@@ -2,7 +2,7 @@ import React, {useContext, useEffect, useRef, useState} from 'react';
 import OptionImage from '@/component/content/Left/OptionImage';
 import OptionInfo from '@/component/content/Right/OptionInfo';
 import TotalEstimate from '@/component/content/Totalestimate/TotalEstimate';
-import Spinner from '@/component/common/Spinner';
+import Spinner from '@/component/common/spinner/Spinner';
 import SelectedOptionContent from '@/component/content/SelectedOptionContent';
 
 import {OptionContext} from '@/provider/optionProvider';
@@ -13,7 +13,7 @@ import {useGuideFlowState} from '@/provider/guideFlowProvider';
 import {fetchData} from '@/api/fetchData';
 import {postFetchData} from '@/api/postFetchData';
 
-import { Option } from '@/@types/Response';
+import {Option} from '@/@types/Response';
 
 import S from '@/component/content/Content.styles';
 

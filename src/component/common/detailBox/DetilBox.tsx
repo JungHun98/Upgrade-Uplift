@@ -1,6 +1,5 @@
 import React, {useRef} from 'react';
-
-import {textParse} from '../textParse';
+import {textParse} from '@/util/textParse';
 
 import S from './DetilBox.styles';
 

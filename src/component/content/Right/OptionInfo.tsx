@@ -15,7 +15,7 @@ import {colors} from '@/style/theme';
 import {Title1_Medium, Title3_Regular} from '@/style/fonts';
 import {cardDataType} from '../contentInterface';
 import {OptionContext} from '@/provider/optionProvider';
-import {textParse} from '@/component/common/textParse';
+import {textParse} from '@/component/common/cardb/Cardb';
 
 interface cardDataProps {
   cardData: cardDataType[];
