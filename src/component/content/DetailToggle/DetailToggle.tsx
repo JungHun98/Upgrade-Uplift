@@ -1,7 +1,5 @@
 import React, {useState} from 'react';
-import styled from 'styled-components';
-import {Popup_Regular} from '@/style/fonts';
-import {colors} from '@/style/theme';
+import S from './DetailToggle.styles';
 
 interface props {
   onClick: (event: React.MouseEvent) => void;
@@ -34,7 +32,7 @@ function DetailToggle({onClick, opened, selected, onHover, onHoverEnd}: props) {
   const buttonText: string = opened ? '접기' : '자세히보기';
   const [isHovered, setIsHovered] = useState(false);
   return (
-    <Wrapper
+    <S.Wrapper
       onClick={onClick}
       $selected={selected.toString()}
       onMouseEnter={() => {
@@ -48,23 +46,8 @@ function DetailToggle({onClick, opened, selected, onHover, onHoverEnd}: props) {
     >
       {buttonText}
       {DetailIcon(opened)}
-    </Wrapper>
+    </S.Wrapper>
   );
 }
 
 export default DetailToggle;
-
-const Wrapper = styled.button<{$selected: string}>`
-  display: inline-flex;
-  align-items: center;
-  height: 16px;
-  ${Popup_Regular}
-  font-size: 12px;
-  font-weight: 500;
-  line-height: 130%;
-  letter-spacing: -0.36px;
-  color: ${colors.Cool_Grey_003};
-  gap: 2px;
-
-  pointer-events: ${(props) => (props.$selected === 'true' ? '' : 'none')};
-`;
