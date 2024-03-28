@@ -1,16 +1,16 @@
 import React, {useContext, useState} from 'react';
-import styled from 'styled-components';
-import {flexCenter} from '../../../style/common';
-import {colors} from '../../../style/theme';
-import {Body2_Medium, Title1_Medium} from '@/style/fonts';
+
 import {OptionContext} from '@/provider/optionProvider';
 import {TempOptionContext} from '@/provider/tempOptionProvider';
 import {SelectedOptionContext} from '@/provider/selectedOptionProvider';
 import {TempAdditionalOptionsContext} from '@/provider/tempAdditionalOptionProvider';
 import {SelectedAdditionalOptionsContext} from '@/provider/additionalOptionProvider';
+
 import {getTotalPrice} from '@//util/getTotPrice';
+
 import Warning from '@/component/common/warning/Warning';
-import {getCategory} from '@//util/getCategory';
+
+import S from './Footer.styles';
 
 interface props {
   onClick: () => void;
@@ -106,91 +106,29 @@ function Footer({onClick, isOpen, setIsSaved}: props) {
       {!isWarning && (
         <Warning text={warningText} onPopup={setIsWarning} onNext={nextStep} />
       )}
-      <Wrapper>
-        <Total>
-          <ModalToggle onClick={onClick}>
+      <S.Wrapper>
+        <S.Total>
+          <S.ModalToggle onClick={onClick}>
             총 견적금액
-            <IconBox>{upperButton(isOpen)}</IconBox>
-          </ModalToggle>
-          <TotalPrice>{totalPrice.toLocaleString()} 원</TotalPrice>
-        </Total>
-        <OptionSwitcher>
-          <PrevOptionButton onClick={() => setOption(option - 1)}>
+            <S.IconBox>{upperButton(isOpen)}</S.IconBox>
+          </S.ModalToggle>
+          <S.TotalPrice>{totalPrice.toLocaleString()} 원</S.TotalPrice>
+        </S.Total>
+        <S.OptionSwitcher>
+          <S.PrevOptionButton onClick={() => setOption(option - 1)}>
             이전
-          </PrevOptionButton>
-          <NextOptionButton
+          </S.PrevOptionButton>
+          <S.NextOptionButton
             onClick={() => {
               handleSelectComplete();
             }}
           >
             선택 완료
-          </NextOptionButton>
-        </OptionSwitcher>
-      </Wrapper>
+          </S.NextOptionButton>
+        </S.OptionSwitcher>
+      </S.Wrapper>
     </>
   );
 }
 
 export default Footer;
-
-const Wrapper = styled.div`
-  display: flex;
-  justify-content: space-between;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-
-  z-index: 3;
-`;
-
-const Total = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  width: 135px;
-  height: 100%;
-  gap: 5px;
-`;
-
-const ModalToggle = styled.button`
-  ${flexCenter}
-  ${Body2_Medium};
-  color: ${colors.Cool_Grey_003};
-  gap: 5px;
-`;
-
-const TotalPrice = styled.div`
-  ${Title1_Medium};
-  text-wrap: nowrap;
-`;
-
-const OptionSwitcher = styled.div`
-  display: flex;
-  justify-content: space-between;
-  width: 150px;
-  height: 100%;
-`;
-
-const NextOptionButton = styled.button`
-  ${flexCenter}
-  ${Body2_Medium};
-  width: 113px;
-  padding: 14px 20px;
-  border-radius: 6px;
-  background: ${colors.Main_Hyundai_Blue};
-  color: white;
-  gap: 8px;
-`;
-
-const PrevOptionButton = styled.button`
-  ${Body2_Medium};
-  color: ${colors.Cool_Grey_003};
-`;
-
-const IconBox = styled.div`
-  width: 16px;
-  height: 16px;
-  flex-shrink: 0;
-  border-radius: 2px;
-  background: var(--001, #f2f4f7);
-`;
