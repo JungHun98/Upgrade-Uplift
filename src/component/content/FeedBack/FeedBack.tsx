@@ -1,9 +1,8 @@
 import React, {useContext, useEffect, useState} from 'react';
-import styled, {keyframes} from 'styled-components';
-import {colors} from '@/style/theme';
-import {Body3_Regular, Title2_Medium} from '@/style/fonts';
 import {fetchData} from '@/api/fetchData';
 import {OptionContext} from '@/provider/optionProvider';
+
+import S from './FeedBack.styles';
 
 const SmileIcon = () => {
   return (
@@ -137,88 +136,16 @@ function FeedBack({id}: Props) {
   }, []);
 
   return (
-    <Wrapper>
-      <IconContainer>
-        <IconBox>{SmileIcon()}</IconBox>
-        <IconBox className="smile2">{SmileIcon2()}</IconBox>
-        <IconBox className="good">{GoodIcon()}</IconBox>
-      </IconContainer>
-      <TitleBox>{comment.title}!</TitleBox>
-      <Description>{comment.description}</Description>
-    </Wrapper>
+    <S.Wrapper>
+      <S.IconContainer>
+        <S.IconBox>{SmileIcon()}</S.IconBox>
+        <S.IconBox className="smile2">{SmileIcon2()}</S.IconBox>
+        <S.IconBox className="good">{GoodIcon()}</S.IconBox>
+      </S.IconContainer>
+      <S.TitleBox>{comment.title}!</S.TitleBox>
+      <S.Description>{comment.description}</S.Description>
+    </S.Wrapper>
   );
 }
 
 export default FeedBack;
-
-const opacityAni = keyframes`
-0%{
-    opacity: 0;
-}
-100%{
-    opacity: 1;
-}
-`;
-
-const moveOpacityAni = keyframes`
-0%{
-    opacity: 0;
-    left: 0;
-}
-100%{
-    opacity: 1;
-    left: 100%;
-}
-`;
-const Wrapper = styled.div`
-  position: absolute;
-  width: 375px;
-  height: 154px;
-  top: -2px;
-  left: -2px;
-  padding: 20px;
-  border-radius: 6px;
-  background: ${colors.Main_Hyundai_Blue};
-  animation: ${opacityAni} 0.5s forwards;
-`;
-
-const IconContainer = styled.div`
-  position: relative;
-  width: 30px;
-  height: 30px;
-
-  div {
-    transition: 0.5s;
-  }
-
-  .smile2 {
-    opacity: 0;
-    animation: ${opacityAni} 0.5s forwards;
-    animation-delay: 0.5s;
-  }
-
-  .good {
-    opacity: 0;
-    top: -3px;
-    animation: ${moveOpacityAni} 0.5s forwards;
-    animation-delay: 0.5s;
-  }
-`;
-
-const IconBox = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-`;
-
-const TitleBox = styled.div`
-  ${Title2_Medium}
-  margin-top: 14px;
-  color: ${colors.Hyundai_White};
-`;
-
-const Description = styled.div`
-  ${Body3_Regular}
-  margin-top: 8px;
-  color: ${colors.Hyundai_White};
-`;

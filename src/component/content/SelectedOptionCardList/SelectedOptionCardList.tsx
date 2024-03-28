@@ -1,11 +1,17 @@
 import React, {useEffect, useContext, useRef, useState} from 'react';
-import styled, {keyframes} from 'styled-components';
-import OptionCard from './Card/OptionCard';
+
+import OptionCard from '../OptionCard/OptionCard';
 import {cardDataType} from '../contentInterface';
+
 import {OptionContext} from '@/provider/optionProvider';
 import {TempAdditionalOptionsContext} from '@/provider/tempAdditionalOptionProvider';
+
 import {fetchData} from '@/api/fetchData';
+
 import {getCategory} from '@//util/getCategory';
+
+import S from './SelectedOptionCardList.styles';
+
 interface cardListProps {
   cardData: cardDataType[];
   isSaved: boolean;
@@ -13,18 +19,11 @@ interface cardListProps {
   selectedIndex: number;
   categoryIdx: number;
 }
+
 interface SelectionRatioProps {
   id: number;
   selectionRatio: number;
 }
-const moveTop = keyframes`
-  0% {
-    transform: translateY(100%);
-  }
-  100% {
-    transform: translateY(0);
-  }
-`;
 
 const scrollIntoSelected = (
   elem: React.RefObject<HTMLUListElement>,
@@ -108,35 +107,10 @@ function SelectedOptionCardList({
     ));
 
   return (
-    <Wrapper key={option}>
-      <Container ref={ulRef}>{cards}</Container>
-    </Wrapper>
+    <S.Wrapper key={option}>
+      <S.Container ref={ulRef}>{cards}</S.Container>
+    </S.Wrapper>
   );
 }
 
 export default SelectedOptionCardList;
-
-const Wrapper = styled.div`
-  &::-webkit-scrollbar {
-    display: none;
-  }
-
-  width: 100%;
-  height: 375px;
-  margin-top: 32px;
-  overflow-y: scroll;
-`;
-
-const Container = styled.ul`
-  li {
-    width: 100%;
-  }
-  display: inline-flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin-bottom: 30px;
-  width: 100%;
-
-  // animation: ${moveTop} 1s ease-out;
-  gap: 16px;
-`;

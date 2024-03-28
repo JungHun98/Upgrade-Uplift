@@ -1,10 +1,9 @@
 import {OptionContext} from '@/provider/optionProvider';
-import {flexCenter} from '@/style/common';
-import {Popup_Regular} from '@/style/fonts';
 import React, {useContext, useEffect, useState} from 'react';
-import styled from 'styled-components';
 import {useGuideFlowState} from '@/provider/guideFlowProvider';
 import {postFetchData} from '@/api/postFetchData';
+
+import S from './Tag.styles';
 
 const categoryName: Record<number, string> = {
   0: 'powertrain',
@@ -53,10 +52,10 @@ function TagBox({id}: Props) {
             });
           });
           return (
-            <Tag key={index}>
+            <S.Tag key={index}>
               <div>{keyword}</div>
               <div>{elem.selectionRatio}%</div>
-            </Tag>
+            </S.Tag>
           );
         });
         setTagArr(tags);
@@ -64,23 +63,7 @@ function TagBox({id}: Props) {
     };
     getTags();
   }, []);
-  return <Wrapper>{tagArr}</Wrapper>;
+  return <S.Wrapper>{tagArr}</S.Wrapper>;
 }
 
 export default TagBox;
-
-const Wrapper = styled.div`
-  display: flex;
-  width: -webkit-fill-available;
-  padding-left: 8px;
-  gap: 8px;
-`;
-
-const Tag = styled.div`
-  ${Popup_Regular}
-  ${flexCenter}
-  padding: 4px 8px;
-  border-radius: 2px;
-  background: #deebff;
-  gap: 10px;
-`;
