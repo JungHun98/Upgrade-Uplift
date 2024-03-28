@@ -1,13 +1,13 @@
 import React from 'react';
-import styled, {css} from 'styled-components';
 import {fetchData} from '@/api/fetchData';
-import {colors} from '@/style/theme';
 import {
   useCardbState,
   useCardbDispatch,
   CLICK_WORD,
   CLOSE_MODAL,
 } from '@/provider/cardbProvider';
+
+import S from './Cardb.styles';
 
 const dictionaryIcon = () => {
   return (
@@ -67,51 +67,16 @@ function Cardb({children}: {children: string}) {
   };
 
   return (
-    <Wrapper
+    <S.Wrapper
       onClick={handleClickCardb}
       $cardbOn={cardbState.cardbOn}
       $modalOn={
         cardbState.modalOpen && cardbState.dataObject.keyword === children
       }
     >
-      <TextBox>{children}</TextBox>
-    </Wrapper>
+      <S.TextBox>{children}</S.TextBox>
+    </S.Wrapper>
   );
 }
 
-const cardbOnCss = css`
-  background: ${colors.Icon_Yellow};
-  cursor: pointer;
-`;
-
-const modalOnCss = css`
-  background: ${colors.Cool_Grey};
-  color: ${colors.Hyundai_White};
-  cursor: pointer;
-`;
-
-const Wrapper = styled.div<{$cardbOn: boolean; $modalOn: boolean}>`
-  display: inline-flex;
-  position: relative;
-  transition: 0.5s;
-  border-radius: 6px;
-  gap: 4px;
-  ${({$cardbOn}) => $cardbOn && cardbOnCss}
-  ${({$modalOn}) => $modalOn && modalOnCss}
-`;
-
-const TextBox = styled.div`
-  display: inline-block;
-`;
-
-export const textParse = (text: string) => {
-  const parts = text.split(/(<cardb>.*?<\/cardb>)/).map((part, index) => {
-    if (part.startsWith('<cardb>')) {
-      const tagContent = part.replace(/<\/?cardb>/g, '');
-      return <Cardb key={index}>{tagContent}</Cardb>;
-    }
-    return part;
-  });
-
-  return <>{parts}</>;
-};
+export default Cardb;

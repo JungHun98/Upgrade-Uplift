@@ -9,7 +9,7 @@ import {SelectedOptionContext} from '@/provider/selectedOptionProvider';
 import {TempAdditionalOptionsContext} from '@/provider/tempAdditionalOptionProvider';
 import {SelectedAdditionalOptionsContext} from '@/provider/additionalOptionProvider';
 import {getTotalPrice} from '@//util/getTotPrice';
-import Warning from '@/component/common/Warning';
+import Warning from '@/component/common/warning/Warning';
 import {getCategory} from '@//util/getCategory';
 
 interface props {

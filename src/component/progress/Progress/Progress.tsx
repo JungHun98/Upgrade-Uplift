@@ -4,7 +4,7 @@ import ProgressBar from '../ProgressBar/ProgressBar';
 import {OptionContext} from '@/provider/optionProvider';
 import {SelectedOptionContext} from '@/provider/selectedOptionProvider';
 import S from './Progress.styles';
-import Warning from '../../common/Warning';
+import Warning from '../../common/warning/Warning';
 
 function Progress() {
   const {option, setOption} = useContext(OptionContext);

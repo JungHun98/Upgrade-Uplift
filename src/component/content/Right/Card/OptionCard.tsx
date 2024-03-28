@@ -4,17 +4,17 @@ import styled, {css} from 'styled-components';
 import {colors} from '@/style/theme';
 import {Body2_Regular, Popup_Regular, Title2_Medium} from '@/style/fonts';
 import {cardDataType} from '../../contentInterface';
-import DetailBox from '@/component/common/DetilBox';
+import DetailBox from '@/component/common/detailBox/DetilBox';
 import DetailToggle from './DetailToggle';
 import FeedBack from './FeedBack';
 import TagBox from './Tag';
 import {OptionContext} from '@/provider/optionProvider';
 import {fetchData} from '@/api/fetchData';
-import DetailSelectedBox from '@/component/common/DetailSelectedBox';
+import DetailSelectedBox from '@/component/common/detailSelectBox/DetailSelectedBox';
 import {getCategory} from '@//util/getCategory';
 import {useImageSrcDispatch} from '@/provider/tempImageProvider';
 import {useGuideFlowState} from '@/provider/guideFlowProvider';
-import {textParse} from '@/component/common/textParse';
+import {textParse} from '@/util/textParse';
 
 interface Info {
   title: string;
