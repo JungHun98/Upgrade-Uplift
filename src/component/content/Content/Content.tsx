@@ -1,9 +1,9 @@
 import React, {useContext, useEffect, useRef, useState} from 'react';
-import OptionImage from '@/component/content/Left/OptionImage';
-import OptionInfo from '@/component/content/Right/OptionInfo';
+import OptionImage from '@/component/content/OptionImage/OptionImage';
+import OptionInfo from '@/component/content/OptionInfo/OptionInfo';
 import TotalEstimate from '@/component/content/Totalestimate/TotalEstimate';
 import Spinner from '@/component/common/spinner/Spinner';
-import SelectedOptionContent from '@/component/content/SelectedOptionContent';
+import SelectedOptionContent from '@/component/content/SelectedOptionContent/SelectedOptionContent';
 
 import {OptionContext} from '@/provider/optionProvider';
 import {TempOptionContext} from '@/provider/tempOptionProvider';
@@ -15,7 +15,7 @@ import {postFetchData} from '@/api/postFetchData';
 
 import {Option} from '@/@types/Response';
 
-import S from '@/component/content/Content.styles';
+import S from './Content.styles';
 
 type cardData = {
   id: number;

@@ -1,4 +1,4 @@
-import {preventClose} from '@/component/content/Content';
+import {preventClose} from '@/component/content/Content/Content';
 import React, {createContext, useContext, ReactNode, useState} from 'react';
 
 export type ModalType =

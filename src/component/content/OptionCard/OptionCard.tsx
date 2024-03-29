@@ -1,20 +1,25 @@
 import React, {useContext, useEffect} from 'react';
 import {useState, useCallback} from 'react';
-import styled, {css} from 'styled-components';
-import {colors} from '@/style/theme';
-import {Body2_Regular, Popup_Regular, Title2_Medium} from '@/style/fonts';
-import {cardDataType} from '../../contentInterface';
+
 import DetailBox from '@/component/common/detailBox/DetilBox';
-import DetailToggle from './DetailToggle';
-import FeedBack from './FeedBack';
-import TagBox from './Tag';
-import {OptionContext} from '@/provider/optionProvider';
-import {fetchData} from '@/api/fetchData';
 import DetailSelectedBox from '@/component/common/detailSelectBox/DetailSelectedBox';
-import {getCategory} from '@//util/getCategory';
-import {useImageSrcDispatch} from '@/provider/tempImageProvider';
+import DetailToggle from '../DetailToggle/DetailToggle';
+import FeedBack from '../FeedBack/FeedBack';
+import TagBox from '../Tag/Tag';
+
+import {OptionContext} from '@/provider/optionProvider';
 import {useGuideFlowState} from '@/provider/guideFlowProvider';
+import {useImageSrcDispatch} from '@/provider/tempImageProvider';
+
+import {fetchData} from '@/api/fetchData';
+
+import {getCategory} from '@//util/getCategory';
 import {textParse} from '@/util/textParse';
+
+import {cardDataType} from '../contentInterface';
+
+import {colors} from '@/style/theme';
+import S from './OptionCard.styles';
 
 interface Info {
   title: string;
@@ -121,38 +126,40 @@ function OptionCard({selected, onClick, data, isSaved, ratioList}: CardProps) {
   }, [ratioList]);
 
   return (
-    <Wrapper onClick={onClick} $selected={selected} $isGiude={showGuide}>
-      <Container>
-        <CardSection $height={24}>
-          <IconBox>{selected ? SelectIcon(showGuide) : DefaultIcon()}</IconBox>
+    <S.Wrapper onClick={onClick} $selected={selected} $isGiude={showGuide}>
+      <S.Container>
+        <S.CardSection $height={24}>
+          <S.IconBox>
+            {selected ? SelectIcon(showGuide) : DefaultIcon()}
+          </S.IconBox>
           {showGuide && <TagBox id={data.id}></TagBox>}
           {data.partsSrc ? (
-            <Parts $url={data.partsSrc} $selected={selected}></Parts>
+            <S.Parts $url={data.partsSrc} $selected={selected}></S.Parts>
           ) : (
             ''
           )}
-        </CardSection>
+        </S.CardSection>
 
-        <CardSection $height={60}>
-          <TextBox>
-            <Text1 className="blue" $isGiude={showGuide}>
+        <S.CardSection $height={60}>
+          <S.TextBox>
+            <S.Text1 className="blue" $isGiude={showGuide}>
               {data.saleRate
                 ? `나와 비슷한 ${data.saleRate}%가 선택한`
                 : `구매자의 ${rate}%가 선택했어요!`}
-            </Text1>
-            <Text2 className="black">{textParse(data.name)}</Text2>
-          </TextBox>
+            </S.Text1>
+            <S.Text2 className="black">{textParse(data.name)}</S.Text2>
+          </S.TextBox>
           {data.iconSrc ? (
-            <MiddleImg $url={data.iconSrc} $selected={selected}></MiddleImg>
+            <S.MiddleImg $url={data.iconSrc} $selected={selected}></S.MiddleImg>
           ) : (
             ''
           )}
           {data.colorCode ? (
-            <ColorBox $colorcode={data.colorCode}></ColorBox>
+            <S.ColorBox $colorcode={data.colorCode}></S.ColorBox>
           ) : (
             ''
           )}
-        </CardSection>
+        </S.CardSection>
         {hasDetail(option) &&
           (option !== 6
             ? !Array.isArray(descriptionData) && (
@@ -170,8 +177,8 @@ function OptionCard({selected, onClick, data, isSaved, ratioList}: CardProps) {
                 />
               ))}
 
-        <CardSection $height={26} $end={true}>
-          <Price className="blue">{`+ ${data.price.toLocaleString()}원`}</Price>
+        <S.CardSection $height={26} $end={true}>
+          <S.Price className="blue">{`+ ${data.price.toLocaleString()}원`}</S.Price>
 
           {hasDetail(option) ? (
             <DetailToggle
@@ -184,146 +191,13 @@ function OptionCard({selected, onClick, data, isSaved, ratioList}: CardProps) {
           ) : (
             ''
           )}
-        </CardSection>
-      </Container>
+        </S.CardSection>
+      </S.Container>
       {isSaved && option !== 6 && selected && (
         <FeedBack id={data.id}></FeedBack>
       )}
-    </Wrapper>
+    </S.Wrapper>
   );
 }
 
 export default OptionCard;
-
-const flexBetween = css`
-  display: flex;
-  justify-content: space-between;
-`;
-
-const Select = css<{$isGiude: boolean}>`
-  border: 2px solid
-    ${({$isGiude}) =>
-      $isGiude ? colors.Sub_Active_Blue : colors.Main_Hyundai_Blue};
-`;
-
-const Default = css<{$isGiude: boolean}>`
-  background: ${colors.Cool_Grey_001};
-  border: 2px solid transparent;
-  cursor: pointer;
-
-  &:hover {
-    border: 2px solid ${colors.Cool_Grey_003};
-    .blue {
-      color: ${({$isGiude}) =>
-        $isGiude ? colors.Sub_Active_Blue : colors.Main_Hyundai_Blue};
-    }
-    .black {
-      color: ${colors.Cool_Grey};
-    }
-  }
-  div {
-    color: ${colors.Cool_Grey_003};
-    transition: 0.5s;
-  }
-`;
-
-const Wrapper = styled.li<{$selected: boolean; $isGiude: boolean}>`
-  display: flex;
-  flex-shrink: 0;
-  flex-direction: column;
-  position: relative;
-  width: 375px;
-  min-height: 150px;
-  padding: 20px;
-  border-radius: 6px;
-  ${(props) => (props.$selected ? Select : Default)};
-  transition: 0.5s;
-`;
-
-const Container = styled.div``;
-const CardSection = styled.div<{$height?: number; $end?: boolean}>`
-  ${flexBetween}
-  align-items: ${(props) => (props.$end ? 'flex-end' : 'center')};
-
-  height: ${(props) => (props.$height ? props.$height : '')}px;
-`;
-
-const IconBox = styled.div`
-  width: 24px;
-  height: 24px;
-  flex-shrink: 0;
-  transition: 0.5s;
-`;
-
-const imageBlur = css`
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: ${colors.Cool_Grey_001};
-    opacity: 0.5;
-  }
-`;
-
-const Parts = styled.div<{$url: string; $selected: boolean}>`
-  display: flex;
-  align-items: center;
-  position: relative;
-  width: 84px;
-  height: 24px;
-  background: url(${(props) => props.$url}) no-repeat;
-  background-position: center;
-  background-size: contain;
-  ${(props) => {
-    return props.$selected ? '' : imageBlur;
-  }}
-`;
-
-const TextBox = styled.div`
-  gap: 4px;
-`;
-
-const Text1 = styled.div<{$isGiude: boolean}>`
-  ${Popup_Regular}
-  font-size: 12px;
-  line-height: 130%;
-  height: 16px;
-  margin-top: 10px;
-  color: ${({$isGiude}) =>
-    $isGiude ? colors.Sub_Active_Blue : colors.Main_Hyundai_Blue};
-`;
-
-const Text2 = styled.div`
-  ${Title2_Medium}
-  height: 26px;
-  color: ${colors.Cool_Grey};
-`;
-
-const MiddleImg = styled.div<{$url: string; $selected: boolean}>`
-  display: flex;
-  align-items: center;
-  position: relative;
-  width: 150px;
-  height: 60px;
-  background: url(${(props) => props.$url}) no-repeat;
-  background-position: center;
-  ${(props) => {
-    return !props.$selected && imageBlur;
-  }}
-`;
-
-const ColorBox = styled.div<{$colorcode: string}>`
-  width: 60px;
-  height: 60px;
-  border: 1px solid ${colors.Cool_Grey_002};
-  border-radius: 100%;
-  background-image: url(${(props) => props.$colorcode});
-`;
-
-const Price = styled.div`
-  ${Body2_Regular}
-  color: ${colors.Main_Hyundai_Blue};
-`;
