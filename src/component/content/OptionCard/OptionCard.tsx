@@ -3,9 +3,9 @@ import {useState, useCallback} from 'react';
 
 import DetailBox from '@/component/common/detailBox/DetilBox';
 import DetailSelectedBox from '@/component/common/detailSelectBox/DetailSelectedBox';
-import DetailToggle from '../Right/Card/DetailToggle';
-import FeedBack from '../Right/Card/FeedBack';
-import TagBox from '../Right/Card/Tag';
+import DetailToggle from '../DetailToggle/DetailToggle';
+import FeedBack from '../FeedBack/FeedBack';
+import TagBox from '../Tag/Tag';
 
 import {OptionContext} from '@/provider/optionProvider';
 import {useGuideFlowState} from '@/provider/guideFlowProvider';

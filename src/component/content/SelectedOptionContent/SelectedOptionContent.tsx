@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import SelectedOptionInfo from '@/component/content/Right/SelectedOptionInfo';
+import SelectedOptionInfo from '@/component/content/SelectedOptionInfo/SelectedOptionInfo';
 import AdditionalOptionImage from '@/component/content/AdditionalOptionImage/AdditionalOptionImage';
 
 interface cardData {
